@@ -3,9 +3,9 @@ class CustomersController < ApplicationController
     @customers = Customer.all
   end
   def alphabetized
-    @alphabetized = Customer.order(:name)
+    @customers = Customer.order("name ASC")
   end
   def missing_email
-    @missing_email = Customer.where(email: [nil,""])
+    @customers = Customer.where(email: [nil,""])
   end
 end
